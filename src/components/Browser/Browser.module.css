@@ -1,0 +1,9 @@
+header {
+    display: flex;
+    align-items: center;
+    color: #9342d8;
+}
+
+.add-button {
+    justify-self: flex-end;
+}

@@ -1,0 +1,13 @@
+.logo {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    color: #9342d8;
+    margin-left: 0.5rem;
+    align-items: baseline;
+}
+
+.logo button {
+    background: none;
+    margin-left: 0.5rem;
+}
