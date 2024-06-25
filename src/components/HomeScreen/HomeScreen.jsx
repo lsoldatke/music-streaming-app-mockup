@@ -1,11 +1,16 @@
 import Header from '../Header/Header'
 import Browser from "../Browser/Browser.jsx";
+import FeaturedContent from "../FeaturedContent/FeaturedContent.jsx";
+import styles from './HomeScreen.module.css'
 
 function HomeScreen({playlists}) {
   return (
     <>
       <Header/>
-      <Browser playlists={playlists}/>
+      <main>
+        <Browser playlists={playlists}/>
+        <FeaturedContent/>
+      </main>
     </>
   )
 }
