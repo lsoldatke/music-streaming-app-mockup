@@ -1,9 +1,38 @@
-header {
+.browser {
+    width: 25%;
+    border: 1px solid #9342d8;
+    padding: 10px;
+}
+
+.browserHeader {
     display: flex;
     align-items: center;
     color: #9342d8;
 }
 
-.add-button {
+.addButton {
     justify-self: flex-end;
+    background-color: transparent;
+    color: #9342d8;
+}
+
+.playlist {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    margin: 5px 0;
+}
+
+.playlistCoverArt {
+    width: 75px;
+    height: 75px;
+}
+
+.playlistInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.playlistTitle, .playlistDescription {
+    margin: 5px 10px;
 }

@@ -1,11 +1,11 @@
 import Header from '../Header/Header'
 import Browser from "../Browser/Browser.jsx";
 
-function HomeScreen() {
+function HomeScreen({playlists}) {
   return (
     <>
       <Header/>
-      <Browser/>
+      <Browser playlists={playlists}/>
     </>
   )
 }
