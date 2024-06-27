@@ -6,6 +6,7 @@ function FeaturedContent({playlists}) {
     <main className={styles.content}>
       <FeaturedContentCategory title='Recommended for you' playlists={playlists}/>
       <FeaturedContentCategory title='Most popular' playlists={playlists}/>
+      <FeaturedContentCategory title='Growing in popularity' playlists={playlists}/>
     </main>
   );
 }

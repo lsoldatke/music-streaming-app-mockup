@@ -6,4 +6,11 @@
 .content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.categoryTitle {
+    margin-left: 10px;
+    color: #9342d8;
 }

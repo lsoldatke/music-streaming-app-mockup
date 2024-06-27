@@ -1,6 +1,7 @@
 .browser {
     width: 25%;
-    border: 1px solid #9342d8;
+    border: 2px solid #9342d8;
+    border-radius: 10px;
     padding: 10px;
 }
 
@@ -36,4 +37,8 @@
 .playlistTitle, .playlistAuthor {
     margin: 1px 10px;
     font-size: 12px;
+}
+
+.playlistAuthor {
+    color: #888888;
 }
