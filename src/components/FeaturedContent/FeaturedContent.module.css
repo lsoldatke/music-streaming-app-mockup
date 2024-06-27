@@ -3,4 +3,8 @@
     height: 584px;
     border: 1px solid #9342d8;
     margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
 }

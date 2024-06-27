@@ -9,7 +9,7 @@ function HomeScreen({playlists}) {
       <Header/>
       <main>
         <Browser playlists={playlists}/>
-        <FeaturedContent/>
+        <FeaturedContent playlists={playlists}/>
       </main>
     </>
   )
