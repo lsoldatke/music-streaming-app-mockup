@@ -11,6 +11,10 @@ function Browser({playlists}) {
     return trimmed.join(' ');
   }
 
+  function onPlaylistClick() {
+    console.log("onPlaylistClick");
+  }
+
   return (
     <nav className={styles.browser}>
       <header className={styles.browserHeader}>
@@ -22,7 +26,7 @@ function Browser({playlists}) {
       </header>
       <div className={styles.browserContent}>
         {playlists.map((playlist, index) => (
-          <div key={index} className={styles.playlist}>
+          <div key={index} className={styles.playlist} onClick={onPlaylistClick}>
             <img className={styles.playlistCoverArt} src={playlist.coverArtUrl} alt={`Playlist ${playlist.title} cover art`} />
             <div className={styles.playlistInfo}>
               <h3 className={styles.playlistTitle}>{trimString(playlist.title)}</h3>

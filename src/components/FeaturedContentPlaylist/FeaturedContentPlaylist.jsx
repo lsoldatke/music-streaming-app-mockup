@@ -8,8 +8,12 @@ function FeaturedContentPlaylist({playlist}) {
     return trimmed.join(' ');
   }
 
+  function onPlaylistClick() {
+    console.log("onPlaylistClick");
+  }
+
   return (
-    <div className={styles.playlist}>
+    <div className={styles.playlist} onClick={onPlaylistClick}>
       <img className={styles.playlistCoverArt} src={playlist.coverArtUrl} alt={`Playlist ${playlist.title} cover art`}/>
       <div className={styles.playlistInfo}>
         <h3 className={styles.playlistTitle}>{trimString(playlist.title)}</h3>
