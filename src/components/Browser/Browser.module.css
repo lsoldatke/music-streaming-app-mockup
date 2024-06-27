@@ -34,6 +34,7 @@
 .playlistCoverArt {
     width: 75px;
     height: 75px;
+    border-radius: 10px;
 }
 
 .playlistInfo {
@@ -48,4 +49,8 @@
 
 .playlistAuthor {
     color: #888888;
+}
+
+.title {
+    margin-left: 5px;
 }

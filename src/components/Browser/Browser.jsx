@@ -19,7 +19,7 @@ function Browser({playlists}) {
     <nav className={styles.browser}>
       <header className={styles.browserHeader}>
         <BiLibrary size={24}/>
-        <h2>Library</h2>
+        <h2 className={styles.title}>Library</h2>
         <button className={styles.addButton}>
           <IoMdAdd/>
         </button>
