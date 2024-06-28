@@ -1,4 +1,6 @@
 .player {
+  display: flex;
+  justify-content: space-between;
   background-color: #242424;
   border: 1px solid #9342d8;
   position: fixed;
@@ -6,7 +8,41 @@
   left: 0;
   right: 0;
   margin: 0 auto;
+  padding: 10px 50px;
   border-radius: 10px;
   width: 75%;
-  height: 7%;
+  height: 10%;
+  opacity: 90%;
+}
+
+.trackInfo {
+  display: flex;
+}
+
+.songInfo {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  margin: 0 0 0 10px;
+  justify-content: space-around;
+}
+
+.songTitle, .songAuthor {
+  padding: 0;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+  align-self: center;
+}
+
+.playlistCoverArt {
+  border-radius: 10px;
+}
+
+.previousTrackButton:hover, .playTrackButton:hover, .nextTrackButton:hover {
+  cursor: pointer;
 }
