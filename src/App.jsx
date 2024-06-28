@@ -1,7 +1,7 @@
 import './App.css'
 import HomeScreen from "./components/HomeScreen/HomeScreen.jsx";
 import {useState} from "react";
-import playlistsData from '../public/data/playlists.json'
+import playlistsData from './data/playlists.json'
 
 function App() {
   const [playlists] = useState(playlistsData);

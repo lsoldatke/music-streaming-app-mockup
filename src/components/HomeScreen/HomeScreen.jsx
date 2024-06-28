@@ -1,7 +1,7 @@
 import Header from '../Header/Header'
 import Browser from "../Browser/Browser.jsx";
 import FeaturedContent from "../FeaturedContent/FeaturedContent.jsx";
-import styles from './HomeScreen.module.css'
+import Player from "../Player/Player.jsx";
 
 function HomeScreen({playlists}) {
   return (
@@ -10,6 +10,7 @@ function HomeScreen({playlists}) {
       <main>
         <Browser playlists={playlists}/>
         <FeaturedContent playlists={playlists}/>
+        <Player />
       </main>
     </>
   )
