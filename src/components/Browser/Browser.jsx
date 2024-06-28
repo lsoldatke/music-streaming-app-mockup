@@ -27,7 +27,8 @@ function Browser({playlists}) {
       <div className={styles.browserContent}>
         {playlists.map((playlist, index) => (
           <div key={index} className={styles.playlist} onClick={onPlaylistClick}>
-            <img className={styles.playlistCoverArt} src={playlist.coverArtUrl} alt={`Playlist ${playlist.title} cover art`} />
+            <img className={styles.playlistCoverArt} src={playlist.coverArtUrl}
+                 alt={`Playlist ${playlist.title} cover art`}/>
             <div className={styles.playlistInfo}>
               <h3 className={styles.playlistTitle}>{trimString(playlist.title)}</h3>
               <p className={styles.playlistAuthor}>{`Playlist - ${playlist.author}`}</p>

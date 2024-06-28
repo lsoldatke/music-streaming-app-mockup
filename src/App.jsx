@@ -6,23 +6,28 @@ import songsData from './data/songs.json'
 
 function App() {
   const [playlists] = useState(playlistsData);
-  const [songs, setSongs] = useState(songsData);
+  const [songs] = useState(songsData);
   const [currentlyPlayingIndex, setCurrentlyPlayingIndex] = useState(0);
   const [currentlyPlaying, setCurrentlyPlaying] = useState(songs[currentlyPlayingIndex]);
 
-  function playPause() {}
   function playNextSong() {
-    setCurrentlyPlayingIndex(currentlyPlayingIndex + 1);
+    if (currentlyPlayingIndex !== currentlyPlaying.length - 1) {
+      setCurrentlyPlayingIndex(currentlyPlayingIndex + 1);
+      setCurrentlyPlaying(songs[currentlyPlayingIndex]);
+    }
   }
+
   function playPreviousSong() {
-    setCurrentlyPlayingIndex(currentlyPlayingIndex - 1);
+    if (currentlyPlayingIndex !== 0) {
+      setCurrentlyPlayingIndex(currentlyPlayingIndex - 1);
+      setCurrentlyPlaying(songs[currentlyPlayingIndex]);
+    }
   }
 
   return (
     <HomeScreen
       playlists={playlists}
       currentlyPlaying={currentlyPlaying}
-      onPlayPause={playPause}
       onNextSong={playNextSong}
       onPreviousSong={playPreviousSong}
     />
