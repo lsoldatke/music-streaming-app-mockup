@@ -3,6 +3,8 @@ import HomeScreen from "./components/HomeScreen/HomeScreen.jsx";
 import {useState} from "react";
 import playlistsData from './data/playlists.json'
 import songsData from './data/songs.json'
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import PlaylistView from "./components/PlaylistView/PlaylistView.jsx";
 
 function App() {
   const [playlists] = useState(playlistsData);
@@ -25,13 +27,16 @@ function App() {
   }
 
   return (
-    <HomeScreen
-      playlists={playlists}
-      currentlyPlaying={currentlyPlaying}
-      onNextSong={playNextSong}
-      onPreviousSong={playPreviousSong}
-    />
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeScreen playlists={playlists}
+                                             currentlyPlaying={currentlyPlaying}
+                                             onNextSong={playNextSong}
+                                             onPreviousSong={playPreviousSong}/>}/>
+        <Route path="/playlists/:id" element={<PlaylistView playlists={playlists}/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App
