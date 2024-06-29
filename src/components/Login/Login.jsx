@@ -34,12 +34,12 @@ function Login({onLogin}) {
           <div className={styles.email}>
             <label htmlFor="email">E-mail:</label>
             <input className={styles.emailInput} type="text" name="email" value={formData.email}
-                   onChange={changeHandler}/>
+                   onChange={changeHandler} required/>
           </div>
           <div className={styles.password}>
             <label htmlFor="password">Password:</label>
             <input className={styles.passwordInput} type="text" name="password" value={formData.password}
-                   onChange={changeHandler}/>
+                   onChange={changeHandler} required/>
           </div>
           <button className={styles.submitButton} type="submit">Log in</button>
         </form>
