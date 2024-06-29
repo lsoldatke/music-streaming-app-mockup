@@ -1,5 +1,6 @@
 import styles from './Header.module.css';
 import {FaSearch} from 'react-icons/fa';
+import {Link} from "react-router-dom";
 
 function Header() {
   function onProfilePicClick() {
@@ -8,7 +9,9 @@ function Header() {
 
   return (
     <header className={styles.logo}>
-      <h1>React Player</h1>
+      <Link className={styles.title} to="/">
+        <h1>React Player</h1>
+      </Link>
       <button className={styles.searchButton}>
         <FaSearch size={22} color='#9342d8'/>
       </button>

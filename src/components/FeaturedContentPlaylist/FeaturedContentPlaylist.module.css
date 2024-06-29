@@ -7,6 +7,7 @@
 
 .playlist:hover {
     background-color: #3a3a3a;
+    transition: background-color 0.3s;
     cursor: pointer;
 }
 

@@ -18,3 +18,14 @@
     border-radius: 50%;
     align-self: center;
 }
+
+.profilePic:hover {
+    border: 7px solid #535bf2;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.title {
+    color: #9342d8;
+    transition: color 0.5s;
+}

@@ -26,6 +26,13 @@ function App() {
     }
   }
 
+  function changeSong(songId) {
+    const song = songs.find(song => song.id === songId);
+    console.log(song);
+
+    setCurrentlyPlaying(song);
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -33,7 +40,12 @@ function App() {
                                              currentlyPlaying={currentlyPlaying}
                                              onNextSong={playNextSong}
                                              onPreviousSong={playPreviousSong}/>}/>
-        <Route path="/playlists/:id" element={<PlaylistView playlists={playlists}/>}/>
+        <Route path="/playlists/:id" element={<PlaylistView playlists={playlists}
+                                                            songs={songs}
+                                                            currentlyPlaying={currentlyPlaying}
+                                                            onNextSong={playNextSong}
+                                                            onPreviousSong={playPreviousSong}
+                                                            onSongSelected={changeSong}/>}/>
       </Routes>
     </BrowserRouter>
   );
