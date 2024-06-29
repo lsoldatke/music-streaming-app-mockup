@@ -1,6 +1,6 @@
 import styles from './FeaturedContentCategory.module.css'
 import FeaturedContentPlaylist from "../FeaturedContentPlaylist/FeaturedContentPlaylist.jsx";
-import featuredContent from "../FeaturedContent/FeaturedContent.jsx";
+import {Link} from "react-router-dom";
 
 function FeaturedContentCategory({title, playlists}) {
   return (
@@ -8,7 +8,9 @@ function FeaturedContentCategory({title, playlists}) {
       <h2 className={styles.categoryTitle}>{title}</h2>
       <div className={styles.content}>
         {playlists.map((playlist, index) => index % 2 === 0 ?
-          <FeaturedContentPlaylist key={index} playlist={playlist}/> : null
+          <Link to={`/playlists/${playlist.id}`} key={index} className={styles.element}>
+            <FeaturedContentPlaylist key={index} playlist={playlist}/>
+          </Link> : null
         )}
       </div>
     </div>
