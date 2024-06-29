@@ -4,10 +4,10 @@ import FeaturedContent from "../FeaturedContent/FeaturedContent.jsx";
 import Player from "../Player/Player.jsx";
 import styles from './HomeScreen.module.css'
 
-function HomeScreen({playlists, currentlyPlaying, onNextSong, onPreviousSong}) {
+function HomeScreen({playlists, currentlyPlaying, onNextSong, onPreviousSong, userName}) {
   return (
     <>
-      <Header/>
+      <Header showSearchButton={true} userName={userName}/>
       <main>
         <Browser playlists={playlists}/>
         <FeaturedContent playlists={playlists}/>
