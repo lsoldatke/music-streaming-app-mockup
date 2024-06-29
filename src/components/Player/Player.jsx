@@ -1,6 +1,6 @@
 import styles from './Player.module.css'
 import {FaRegCirclePlay} from "react-icons/fa6";
-import {MdOutlineSkipPrevious, MdOutlineSkipNext} from "react-icons/md";
+import {MdOutlineSkipNext, MdOutlineSkipPrevious} from "react-icons/md";
 import {FaRegPauseCircle} from "react-icons/fa";
 import {useState} from "react";
 
