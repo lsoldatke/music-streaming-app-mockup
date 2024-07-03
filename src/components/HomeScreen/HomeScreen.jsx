@@ -4,7 +4,7 @@ import FeaturedContent from "../FeaturedContent/FeaturedContent.jsx";
 import Player from "../Player/Player.jsx";
 import styles from './HomeScreen.module.css'
 
-function HomeScreen({playlists, currentlyPlaying, onNextSong, onPreviousSong, userName}) {
+function HomeScreen({playlists, currentlyPlayingTrack, onSkipNext, onSkipPrevious, userName}) {
   return (
     <>
       <Header showSearchButton={true} userName={userName}/>
@@ -12,9 +12,9 @@ function HomeScreen({playlists, currentlyPlaying, onNextSong, onPreviousSong, us
         <Browser playlists={playlists}/>
         <FeaturedContent playlists={playlists}/>
         <Player
-          currentlyPlaying={currentlyPlaying}
-          onNextSong={onNextSong}
-          onPreviousSong={onPreviousSong}
+          currentlyPlayingTrack={currentlyPlayingTrack}
+          onSkipNext={onSkipNext}
+          onSkipPrevious={onSkipPrevious}
         />
       </main>
     </>

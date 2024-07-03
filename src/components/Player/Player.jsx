@@ -1,10 +1,12 @@
-import styles from './Player.module.css'
-import {FaRegCirclePlay} from "react-icons/fa6";
-import {MdOutlineSkipNext, MdOutlineSkipPrevious} from "react-icons/md";
-import {FaRegPauseCircle} from "react-icons/fa";
 import {useState} from "react";
+import {FaRegPauseCircle} from "react-icons/fa";
+import {FaRegCirclePlay, FaRepeat, FaShuffle} from "react-icons/fa6";
+import {IoMdInformationCircleOutline} from "react-icons/io";
+import {MdOutlineSkipNext, MdOutlineSkipPrevious} from "react-icons/md";
+import {PiQueue} from "react-icons/pi";
+import styles from './Player.module.css'
 
-function Player({currentlyPlaying, onNextSong, onPreviousSong}) {
+function Player({currentlyPlayingTrack, onSkipPrevious, onSkipNext}) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   function playPause() {
@@ -14,38 +16,61 @@ function Player({currentlyPlaying, onNextSong, onPreviousSong}) {
   return (
     <div className={styles.player}>
       <div className={styles.trackInfo}>
-        <img className={styles.playlistCoverArt} src={currentlyPlaying.albumCoverArtUrl} alt="Song album cover art"/>
-        <div className={styles.songInfo}>
-          <h4 className={styles.songTitle}>{currentlyPlaying.title}</h4>
-          <p className={styles.songArtist}>{currentlyPlaying.author}</p>
+        <img className={styles.albumArt} src={currentlyPlayingTrack.albumCoverArtUrl}
+             alt="Album art"/>
+        <div className={styles.trackTextInfo}>
+          <p className={styles.trackTitle}>{currentlyPlayingTrack.title}</p>
+          <p className={styles.trackAuthor}>{currentlyPlayingTrack.author}</p>
         </div>
       </div>
-      <div className={styles.controls}>
+      <div className={`${styles.playControls} ${styles.controls}`}>
+        <FaShuffle
+          className={styles.shuffleButton}
+          size={20}
+          color="#9342d8"
+        />
         <MdOutlineSkipPrevious
-          className={styles.previousTrackButton}
+          className={styles.skipPreviousButton}
+          onClick={onSkipPrevious}
           size={40}
           color="#9342d8"
-          onClick={onPreviousSong}
         />
 
         {isPlaying ? <FaRegPauseCircle
-          className={styles.playTrackButton}
+          className={styles.pauseButton}
+          onClick={playPause}
           size={40}
           color="#9342d8"
-          onClick={playPause}
         /> : <FaRegCirclePlay
-          className={styles.playTrackButton}
+          className={styles.playButton}
+          onClick={playPause}
           size={40}
           color="#9342d8"
-          onClick={playPause}
         />
         }
 
         <MdOutlineSkipNext
-          className={styles.nextTrackButton}
+          className={styles.skipNextButton}
+          onClick={onSkipNext}
           size={40}
           color="#9342d8"
-          onClick={onNextSong}
+        />
+        <FaRepeat
+          className={styles.repeatButton}
+          size={20}
+          color="#9342d8"
+        />
+      </div>
+      <div className={`${styles.additionalControls} ${styles.controls}`}>
+        <PiQueue
+          className={styles.queueButton}
+          size={30}
+          color="#9342d8"
+        />
+        <IoMdInformationCircleOutline
+          className={styles.infoButton}
+          size={30}
+          color="#9342d8"
         />
       </div>
     </div>

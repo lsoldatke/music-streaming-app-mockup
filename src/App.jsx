@@ -10,24 +10,24 @@ import Login from "./components/Login/Login.jsx";
 function App() {
   const [playlists] = useState(playlistsData);
   const [songs] = useState(songsData);
-  const [currentlyPlayingIndex, setCurrentlyPlayingIndex] = useState(0);
-  const [currentlyPlaying, setCurrentlyPlaying] = useState(songs[currentlyPlayingIndex]);
+  const [currentlyPlayingTrackIndex, setCurrentlyPlayingTrackIndex] = useState(0);
+  const [currentlyPlayingTrack, setCurrentlyPlayingTrack] = useState(songs[currentlyPlayingTrackIndex]);
   const [userData, setUserData] = useState({
     email: '',
     password: ''
   });
 
   function playNextSong() {
-    if (currentlyPlayingIndex !== currentlyPlaying.length - 1) {
-      setCurrentlyPlayingIndex(currentlyPlayingIndex + 1);
-      setCurrentlyPlaying(songs[currentlyPlayingIndex]);
+    if (currentlyPlayingTrackIndex !== currentlyPlayingTrack.length - 1) {
+      setCurrentlyPlayingTrackIndex(currentlyPlayingTrackIndex + 1);
+      setCurrentlyPlayingTrack(songs[currentlyPlayingTrackIndex]);
     }
   }
 
   function playPreviousSong() {
-    if (currentlyPlayingIndex !== 0) {
-      setCurrentlyPlayingIndex(currentlyPlayingIndex - 1);
-      setCurrentlyPlaying(songs[currentlyPlayingIndex]);
+    if (currentlyPlayingTrackIndex !== 0) {
+      setCurrentlyPlayingTrackIndex(currentlyPlayingTrackIndex - 1);
+      setCurrentlyPlayingTrack(songs[currentlyPlayingTrackIndex]);
     }
   }
 
@@ -35,7 +35,7 @@ function App() {
     const song = songs.find(song => song.id === songId);
     console.log(song);
 
-    setCurrentlyPlaying(song);
+    setCurrentlyPlayingTrack(song);
   }
 
   function logIn(formData) {
@@ -46,15 +46,15 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeScreen playlists={playlists}
-                                             currentlyPlaying={currentlyPlaying}
-                                             onNextSong={playNextSong}
-                                             onPreviousSong={playPreviousSong}
+                                             currentlyPlayingTrack={currentlyPlayingTrack}
+                                             onSkipNext={playNextSong}
+                                             onSkipPrevious={playPreviousSong}
                                              userName={userData.email}/>}/>
         <Route path="/playlists/:id" element={<PlaylistView playlists={playlists}
                                                             songs={songs}
-                                                            currentlyPlaying={currentlyPlaying}
-                                                            onNextSong={playNextSong}
-                                                            onPreviousSong={playPreviousSong}
+                                                            currentlyPlayingTrack={currentlyPlayingTrack}
+                                                            onSkipNext={playNextSong}
+                                                            onSkipPrevious={playPreviousSong}
                                                             onSongSelected={changeSong}/>}/>
         <Route path="/login" element={<Login onLogin={logIn}/>}/>
       </Routes>

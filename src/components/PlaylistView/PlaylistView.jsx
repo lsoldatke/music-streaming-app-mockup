@@ -4,7 +4,7 @@ import Header from "../Header/Header.jsx";
 import Player from "../Player/Player.jsx";
 import Song from "../Song/Song.jsx";
 
-function PlaylistView({playlists, songs, currentlyPlaying, onNextSong, onPreviousSong, onSongSelected}) {
+function PlaylistView({playlists, songs, currentlyPlayingTrack, onSkipNext, onSkipPrevious, onSongSelected}) {
   const {id} = useParams();
   const playlistId = parseInt(id, 10);
   const playlist = playlists.find((playlist) => playlist.id === playlistId);
@@ -23,9 +23,9 @@ function PlaylistView({playlists, songs, currentlyPlaying, onNextSong, onPreviou
         </div>
       </div>
       <Player
-        currentlyPlaying={currentlyPlaying}
-        onNextSong={onNextSong}
-        onPreviousSong={onPreviousSong}
+        currentlyPlayingTrack={currentlyPlayingTrack}
+        onSkipNext={onSkipNext}
+        onSkipPrevious={onSkipPrevious}
       />
     </>
   );

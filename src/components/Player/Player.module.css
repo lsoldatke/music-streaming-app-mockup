@@ -1,49 +1,58 @@
 .player {
+    width: 75%;
+    height: 10%;
     display: flex;
-    justify-content: space-between;
-    background-color: #242424;
-    border: 1px solid #9342d8;
     position: fixed;
     bottom: 20px;
     left: 0;
     right: 0;
     margin: 0 auto;
-    padding: 10px 50px;
-    border-radius: 10px;
-    width: 75%;
-    height: 10%;
-    opacity: 85%;
+    padding: 10px 20px;
+    background-color: rgba(36, 36, 36, 0.9);
+    border: 1px solid #9342d8;
+    border-radius: 15px;
 }
 
 .trackInfo {
     display: flex;
+    margin-right: 15px;
 }
 
-.songInfo {
+.albumArt {
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.trackTextInfo {
     display: flex;
     flex-direction: column;
-    padding-top: 5px;
-    margin: 0 0 0 10px;
     justify-content: space-around;
+    text-align: left;
 }
 
-.songTitle, .songAuthor {
+.trackTitle {
+    font-weight: bold;
+}
+
+.trackAuthor {
+    color: #c0c0c0;
+}
+
+.trackTitle, .trackAuthor {
     padding: 0;
     margin: 0;
 }
 
 .controls {
     display: flex;
-    justify-content: space-between;
-    width: 10%;
-    align-self: center;
+    align-items: center;
 }
 
-.playlistCoverArt {
-    border-radius: 10px;
-}
-
-.previousTrackButton:hover, .playTrackButton:hover, .nextTrackButton:hover {
+.controls > * {
+    margin: 0 10px;
     cursor: pointer;
-    color: #535bf2;
+}
+
+.playControls {
+    margin: 0 auto;
 }
