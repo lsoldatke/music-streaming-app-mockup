@@ -8,8 +8,8 @@ function FeaturedContentCategory({title, playlists}) {
       <h2 className={styles.categoryTitle}>{title}</h2>
       <div className={styles.content}>
         {playlists.map((playlist, index) => index % 2 === 0 ?
-          <Link to={`/playlists/${playlist.id}`} key={index} className={styles.element}>
-            <FeaturedContentPlaylist key={index} playlist={playlist}/>
+          <Link to={`/playlists/${playlist.id}`} key={index}>
+            <FeaturedContentPlaylist className={styles.element} key={index} playlist={playlist}/>
           </Link> : null
         )}
       </div>
