@@ -1,7 +1,8 @@
 import styles from './Browser.module.css';
+import browserPlaylistStyles from '../Playlist/BrowserPlaylist.module.css';
 import {BiLibrary} from "react-icons/bi";
 import {IoMdAdd} from "react-icons/io";
-import BrowserPlaylist from "../BrowserPlaylist/BrowserPlaylist.jsx";
+import Playlist from "../Playlist/Playlist.jsx";
 import {Link} from "react-router-dom";
 
 
@@ -18,7 +19,7 @@ function Browser({playlists}) {
       <div className={styles.browserContent}>
         {playlists.map((playlist, index) => (
           <Link to={`/playlists/${playlist.id}`} key={index}>
-            <BrowserPlaylist playlist={playlist}/>
+            <Playlist styles={browserPlaylistStyles} playlist={playlist}/>
           </Link>
         ))}
       </div>

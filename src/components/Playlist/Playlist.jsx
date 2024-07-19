@@ -1,6 +1,4 @@
-import styles from './FeaturedContentPlaylist.module.css';
-
-function FeaturedContentPlaylist({playlist}) {
+function Playlist({styles, playlist, onPlaylistClick}) {
   function trimString(str) {
     const words = str.split(' ');
     const trimmed = words.slice(0, 4);
@@ -8,13 +6,10 @@ function FeaturedContentPlaylist({playlist}) {
     return trimmed.join(' ');
   }
 
-  function onPlaylistClick() {
-    console.log("onPlaylistClick");
-  }
-
   return (
     <div className={styles.playlist} onClick={onPlaylistClick}>
-      <img className={styles.playlistCoverArt} src={playlist.coverArtUrl} alt={`Playlist ${playlist.title} cover art`}/>
+      <img className={styles.playlistCoverArt} src={playlist.coverArtUrl}
+           alt={`Playlist ${playlist.title} cover art`}/>
       <div className={styles.playlistInfo}>
         <h3 className={styles.playlistTitle}>{trimString(playlist.title)}</h3>
         <p className={styles.playlistAuthor}>{`By ${playlist.author}`}</p>
@@ -23,4 +18,4 @@ function FeaturedContentPlaylist({playlist}) {
   );
 }
 
-export default FeaturedContentPlaylist;
+export default Playlist;
