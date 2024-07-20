@@ -1,6 +1,5 @@
 .playlist {
     padding: 10px;
-    margin: 10px;
     border-radius: 10px;
     width: 150px;
 }
@@ -11,20 +10,20 @@
     cursor: pointer;
 }
 
-.playlistTitle, .playlistAuthor {
+.image {
+    border-radius: 10px;
+}
+
+.title, .author {
     text-align: center;
     margin: 10px 5px;
 }
 
-.playlistAuthor {
+.title {
+    color: white;
+}
+
+.author {
     font-size: 14px;
     color: #888888;
-}
-
-.playlistCoverArt {
-    border-radius: 10px;
-}
-
-.playlistTitle {
-    color: white;
 }

@@ -1,6 +1,6 @@
-function Playlist({styles, playlist, onPlaylistClick}) {
-  function trimString(str) {
-    const words = str.split(' ');
+function Playlist({playlist, styles, onPlaylistClick}) {
+  function trimTitle(title) {
+    const words = title.split(' ');
     const trimmed = words.slice(0, 4);
 
     return trimmed.join(' ');
@@ -8,11 +8,11 @@ function Playlist({styles, playlist, onPlaylistClick}) {
 
   return (
     <div className={styles.playlist} onClick={onPlaylistClick}>
-      <img className={styles.playlistCoverArt} src={playlist.coverArtUrl}
-           alt={`Playlist ${playlist.title} cover art`}/>
-      <div className={styles.playlistInfo}>
-        <h3 className={styles.playlistTitle}>{trimString(playlist.title)}</h3>
-        <p className={styles.playlistAuthor}>{`By ${playlist.author}`}</p>
+      <img className={styles.image} src={playlist.coverArtUrl}
+           alt={`${playlist.title} playlist image`}/>
+      <div>
+        <h3 className={styles.title}>{trimTitle(playlist.title)}</h3>
+        <p className={styles.author}>{`By ${playlist.author}`}</p>
       </div>
     </div>
   );

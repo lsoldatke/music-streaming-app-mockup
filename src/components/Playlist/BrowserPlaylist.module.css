@@ -1,10 +1,8 @@
 .playlist {
     display: flex;
-    text-align: left;
-    align-items: flex-start;
-    margin: 2px 0;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
+    text-align: left;
 }
 
 .playlist:hover {
@@ -13,26 +11,22 @@
     cursor: pointer;
 }
 
-.playlistCoverArt {
-    width: 75px;
-    height: 75px;
+.image {
+    width: 50px;
+    height: 50px;
     border-radius: 10px;
 }
 
-.playlistInfo {
-    display: flex;
-    flex-direction: column;
+.title, .author {
+    margin: 1px 0 1px 10px;
 }
 
-.playlistTitle, .playlistAuthor {
-    margin: 1px 10px;
-    font-size: 12px;
-}
-
-.playlistAuthor {
-    color: #888888;
-}
-
-.playlistTitle {
+.title {
     color: white;
+    font-size: 16px;
+}
+
+.author {
+    color: #888888;
+    font-size: 14px;
 }
