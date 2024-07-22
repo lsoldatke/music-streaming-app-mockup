@@ -1,7 +1,7 @@
 .playlist {
+    width: 150px;
     padding: 10px;
     border-radius: 10px;
-    width: 150px;
 }
 
 .playlist:hover {
@@ -15,8 +15,8 @@
 }
 
 .title, .author {
-    text-align: center;
     margin: 10px 5px;
+    text-align: center;
 }
 
 .title {
@@ -24,6 +24,6 @@
 }
 
 .author {
-    font-size: 14px;
     color: #888888;
+    font-size: 14px;
 }
