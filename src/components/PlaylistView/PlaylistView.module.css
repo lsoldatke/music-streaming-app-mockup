@@ -1,20 +1,20 @@
 .playlistView {
     border: 2px solid #9342d8;
     border-radius: 10px;
-    margin-left: 10px;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    margin-left: 10px;
     padding: 10px;
+    text-align: left;
 }
 
 .playlistTitle, .playlistAuthor {
-    margin-left: 10px;
     margin-bottom: 1px;
+    margin-left: 10px;
 }
 
 .playlistAuthor {
     color: #888888;
-    margin-top: 1px;
     margin-bottom: 30px;
+    margin-top: 1px;
 }

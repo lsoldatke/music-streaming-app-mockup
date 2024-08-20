@@ -1,13 +1,13 @@
 .playlist {
-    width: 150px;
     padding: 10px;
-    border-radius: 10px;
+    width: 150px;
 }
 
 .playlist:hover {
     background-color: #3a3a3a;
-    transition: background-color 0.3s;
+    border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .image {

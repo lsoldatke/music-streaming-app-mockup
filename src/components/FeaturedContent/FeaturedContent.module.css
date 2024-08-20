@@ -1,10 +1,10 @@
 .content {
-    width: 75%;
     border: 2px solid #9342d8;
     border-radius: 10px;
-    margin-left: 10px;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    margin-left: 10px;
     padding: 10px;
+    text-align: left;
+    width: 75%;
 }

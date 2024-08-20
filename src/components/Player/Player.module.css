@@ -1,16 +1,16 @@
 .player {
-    width: 75%;
-    height: 10%;
-    display: flex;
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    padding: 10px 20px;
     background-color: rgba(36, 36, 36, 0.9);
     border: 1px solid #9342d8;
     border-radius: 15px;
+    bottom: 20px;
+    display: flex;
+    height: 10%;
+    left: 0;
+    margin: 0 auto;
+    padding: 10px 20px;
+    position: fixed;
+    right: 0;
+    width: 75%;
 }
 
 .trackInfo {
@@ -39,18 +39,18 @@
 }
 
 .trackTitle, .trackAuthor {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 .controls {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
 .controls > * {
-    margin: 0 10px;
     cursor: pointer;
+    margin: 0 10px;
 }
 
 .playControls {
