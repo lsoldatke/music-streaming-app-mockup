@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {useState} from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./components/HomeScreen/HomeScreen.jsx";
 import Login from "./components/Login/Login.jsx";
@@ -72,7 +72,7 @@ function App() {
             />
           }
         />
-        <Route path="/login" element={<Login onLogin={logIn} />} />
+        <Route path="/login" element={<Login onLogin={logIn}/>}/>
       </Routes>
     </BrowserRouter>
   );
