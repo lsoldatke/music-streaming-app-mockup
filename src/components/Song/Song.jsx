@@ -1,12 +1,12 @@
 import styles from './Song.module.css'
 
-function Song({song, onSongSelected}) {
+function Song({song: {id, title, author, albumCoverArtUrl}, onSongSelected}) {
   return (
-    <div className={styles.song} onClick={() => onSongSelected(song.id)}>
-      <img className={styles.coverArt} src={song.albumCoverArtUrl} alt="Album cover art"/>
+    <div className={styles.song} onClick={() => onSongSelected(id)}>
+      <img className={styles.coverArt} src={albumCoverArtUrl} alt="Album cover art"/>
       <div className={styles.songInfo}>
-        <h3>{song.title}</h3>
-        <p>{song.author}</p>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.author}>{author}</p>
       </div>
     </div>
   );
