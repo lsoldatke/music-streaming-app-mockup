@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, useParams} from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./components/HomeScreen/HomeScreen.jsx";
 import Login from "./components/Login/Login.jsx";
@@ -44,6 +44,24 @@ function App() {
     setUserData(formData);
   }
 
+  function PlaylistViewRouteWrapper({playlists, songs}) {
+    const {id} = useParams();
+    const numId = parseInt(id, 10);
+    const selectedPlaylist = playlists.find(playlist => playlist.id === numId);
+    const playlistSongs = songs.filter(song => selectedPlaylist.songIds.includes(song.id));
+
+    return (
+      <PlaylistView
+        playlist={selectedPlaylist}
+        songs={playlistSongs}
+        currentlyPlayingTrack={currentlyPlayingTrack}
+        onSongSelected={playSong}
+        onSkipPrevious={playPreviousSong}
+        onSkipNext={playNextSong}
+      />
+    );
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -61,16 +79,7 @@ function App() {
         />
         <Route
           path="/playlists/:id"
-          element={
-            <PlaylistView
-              playlists={playlists}
-              songs={songs}
-              currentlyPlayingTrack={currentlyPlayingTrack}
-              onSkipPrevious={playPreviousSong}
-              onSkipNext={playNextSong}
-              onSongSelected={playSong}
-            />
-          }
+          element={<PlaylistViewRouteWrapper playlists={playlists} songs={songs}/>}
         />
         <Route path="/login" element={<Login onLogin={logIn}/>}/>
       </Routes>
