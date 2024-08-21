@@ -1,11 +1,6 @@
+import {trimTitle} from "../../utils.js";
+
 function Playlist({playlist, styles, onPlaylistClick}) {
-  function trimTitle(title) {
-    const words = title.split(' ');
-    const trimmed = words.slice(0, 4);
-
-    return trimmed.join(' ');
-  }
-
   return (
     <div className={styles.playlist} onClick={onPlaylistClick}>
       <img className={styles.image} src={playlist.coverArtUrl}
