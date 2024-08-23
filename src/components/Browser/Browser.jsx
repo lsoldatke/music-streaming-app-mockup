@@ -8,22 +8,24 @@ import {Link} from "react-router-dom";
 
 function Browser({playlists}) {
   return (
-    <nav className={styles.browser}>
-      <header className={styles.browserHeader}>
-        <BiLibrary size={24}/>
+    <div className={styles.browser}>
+      <div className={styles.header}>
+        <BiLibrary className={styles.libraryIcon}/>
         <h2 className={styles.title}>Library</h2>
-        <button className={styles.addButton}>
-          <IoMdAdd/>
-        </button>
-      </header>
-      <div className={styles.browserContent}>
+        <div className={styles.tools}>
+          <button className={styles.addButton}>
+            <IoMdAdd className={styles.addIcon}/>
+          </button>
+        </div>
+      </div>
+      <div>
         {playlists.map((playlist, index) => (
           <Link to={`/playlists/${playlist.id}`} key={index}>
-            <Playlist styles={browserPlaylistStyles} playlist={playlist}/>
+            <Playlist playlist={playlist} styles={browserPlaylistStyles}/>
           </Link>
         ))}
       </div>
-    </nav>
+    </div>
   )
 }
 
