@@ -1,0 +1,5 @@
+.appTitle {
+    color: #9342d8;
+    /*margin-right: auto;*/
+    transition: color 0.5s;
+}
