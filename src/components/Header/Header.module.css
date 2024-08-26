@@ -1,10 +1,11 @@
-.logo {
-    align-items: baseline;
+.header {
+    align-items: center;
     color: #9342d8;
     display: flex;
     flex-direction: row;
     font-size: 12px;
-    margin-left: 0.5rem;
+    margin: 0 10px;
+    justify-content: space-around;
 }
 
 .searchButton {
@@ -24,6 +25,7 @@
 .profilePic {
     border: 5px solid #3a3a3a;
     border-radius: 50%;
+    margin-left: auto;
 }
 
 .profilePic:hover {
@@ -35,6 +37,7 @@
 .title {
     color: #9342d8;
     transition: color 0.5s;
+    margin-right: auto;
 }
 
 .userName {
