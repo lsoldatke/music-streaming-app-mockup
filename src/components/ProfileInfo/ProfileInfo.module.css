@@ -1,0 +1,20 @@
+.profileInfo {
+    display: flex;
+}
+
+.profilePicture {
+    border: 3px solid #9342d8;
+    border-radius: 50%;
+}
+
+.profilePicture:hover {
+    border: 5px solid #535bf2;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: border-width 0.1s, border-color 0.5s;
+}
+
+.username {
+    color: white;
+    font-size: 16px;
+}

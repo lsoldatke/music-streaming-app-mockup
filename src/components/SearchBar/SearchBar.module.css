@@ -5,8 +5,10 @@
     border-radius: 15px;
     width: 400px;
     height: 50px;
-    transform: translateX(-15%);
     transition: width 0.3s, border-color 0.5s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .searchBar:hover {

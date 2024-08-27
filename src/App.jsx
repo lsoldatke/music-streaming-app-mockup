@@ -71,7 +71,7 @@ function App() {
             <HomeScreen
               playlists={playlists}
               currentlyPlayingTrack={currentlyPlayingTrack}
-              userName={userData.email}
+              username={userData.email}
               onSkipPrevious={playPreviousSong}
               onSkipNext={playNextSong}
             />
