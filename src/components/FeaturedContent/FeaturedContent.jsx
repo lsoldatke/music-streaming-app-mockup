@@ -3,11 +3,11 @@ import FeaturedContentCategory from "../FeaturedContentCategory/FeaturedContentC
 
 function FeaturedContent({playlists}) {
   return (
-    <main className={styles.content}>
-      <FeaturedContentCategory title='Recommended for you' playlists={playlists}/>
-      <FeaturedContentCategory title='Most popular' playlists={playlists}/>
-      <FeaturedContentCategory title='Growing in popularity' playlists={playlists}/>
-    </main>
+    <div className={styles.featuredContent}>
+      <FeaturedContentCategory title="Recommended for you" playlists={playlists}/>
+      <FeaturedContentCategory title="Most popular" playlists={playlists}/>
+      <FeaturedContentCategory title="Growing in popularity" playlists={playlists}/>
+    </div>
   );
 }
 
