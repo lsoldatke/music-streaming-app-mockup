@@ -1,23 +1,12 @@
-.featured-content-category {
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.categoryTitle {
+.title {
     color: #9342d8;
     margin-bottom: 0;
     margin-left: 10px;
     padding-bottom: 10px;
 }
 
-.element {
-    width: 14%;
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
 }

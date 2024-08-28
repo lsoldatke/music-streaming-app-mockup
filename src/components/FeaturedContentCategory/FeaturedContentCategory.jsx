@@ -5,18 +5,18 @@ import {Link} from "react-router-dom";
 
 function FeaturedContentCategory({title, playlists}) {
   return (
-    <div className={styles.featuredContentCategory}>
-      <h2 className={styles.categoryTitle}>{title}</h2>
+    <div>
+      <h2 className={styles.title}>{title}</h2>
       <div className={styles.content}>
         {playlists.map((playlist, index) => index % 2 === 0 ?
           <Link to={`/playlists/${playlist.id}`} key={index}>
-            <Playlist className={styles.element} styles={featuredContentPlaylistStyles} key={index}
-                      playlist={playlist}/>
+            <Playlist key={index} playlist={playlist}
+                      styles={featuredContentPlaylistStyles}/>
           </Link> : null
         )}
       </div>
     </div>
-  )
+  );
 }
 
 export default FeaturedContentCategory;
