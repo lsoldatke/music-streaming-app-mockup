@@ -4,7 +4,8 @@ import {FaRegCirclePlay, FaRepeat, FaShuffle} from "react-icons/fa6";
 import {IoMdInformationCircleOutline} from "react-icons/io";
 import {MdOutlineSkipNext, MdOutlineSkipPrevious} from "react-icons/md";
 import {PiQueue} from "react-icons/pi";
-import styles from './Player.module.css'
+import styles from "./Player.module.css";
+import {trimTitle} from "../../utils.js";
 
 function Player({currentlyPlayingTrack, onSkipPrevious, onSkipNext}) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -19,7 +20,7 @@ function Player({currentlyPlayingTrack, onSkipPrevious, onSkipNext}) {
         <img className={styles.albumArt} src={currentlyPlayingTrack.albumCoverArtUrl}
              alt="Album art"/>
         <div className={styles.trackTextInfo}>
-          <p className={styles.trackTitle}>{currentlyPlayingTrack.title}</p>
+          <p className={styles.trackTitle}>{trimTitle(currentlyPlayingTrack.title)}</p>
           <p className={styles.trackAuthor}>{currentlyPlayingTrack.author}</p>
         </div>
       </div>
