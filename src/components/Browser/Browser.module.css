@@ -28,6 +28,12 @@
 
 .addButton {
     background-color: transparent;
+    border: none;
     color: #9342d8;
     padding: 5px;
+}
+
+.addIcon:hover {
+    font-size: 28px;
+    transition: font-size 0.15s;
 }
