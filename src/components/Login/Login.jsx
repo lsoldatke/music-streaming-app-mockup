@@ -1,14 +1,13 @@
 import styles from './Login.module.css'
 import {useState} from "react";
-import Header from "../Header/Header.jsx";
 import {useNavigate} from "react-router-dom";
 
 function Login({onLogin}) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: ''
   });
-  const navigate = useNavigate();
 
   function changeHandler(event) {
     const {name, value} = event.target;
@@ -26,25 +25,22 @@ function Login({onLogin}) {
   }
 
   return (
-    <>
-      <Header showSearchButton={false}/>
-      <div className={styles.login}>
-        <h2 className={styles.loginTitle}>Login</h2>
-        <form className={styles.loginForm} method="post" onSubmit={submitHandler}>
-          <div className={styles.email}>
-            <label htmlFor="email">E-mail:</label>
-            <input className={styles.emailInput} type="text" name="email" value={formData.email}
-                   onChange={changeHandler} required/>
-          </div>
-          <div className={styles.password}>
-            <label htmlFor="password">Password:</label>
-            <input className={styles.passwordInput} type="text" name="password" value={formData.password}
-                   onChange={changeHandler} required/>
-          </div>
-          <button className={styles.submitButton} type="submit">Log in</button>
-        </form>
-      </div>
-    </>
+    <div className={styles.login}>
+      <h2 className={styles.title}>Log in to React Player</h2>
+      <form className={styles.form} method="post" onSubmit={submitHandler}>
+        <div className={styles.username}>
+          <label htmlFor="username">Username:</label>
+          <input type="text" name="username" className={styles.usernameInput} value={formData.username}
+                 onChange={changeHandler} required/>
+        </div>
+        <div className={styles.password}>
+          <label htmlFor="password">Password:</label>
+          <input type="text" name="password" className={styles.passwordInput} value={formData.password}
+                 onChange={changeHandler} required/>
+        </div>
+        <button className={styles.submitButton} type="submit">Log in</button>
+      </form>
+    </div>
   );
 }
 

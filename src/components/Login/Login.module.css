@@ -1,42 +1,55 @@
 .login {
     border: 2px solid #9342d8;
     border-radius: 10px;
+    height: 90%;
     left: 50%;
-    margin-left: auto;
-    margin-right: auto;
     position: absolute;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     width: 50%;
 }
 
-.loginForm, .loginForm > * {
+.login, .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: #9342d8;
+    font-size: 32px;
+}
+
+.form {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.form, .form > * {
     margin: 10px;
     padding: 10px;
 }
 
-.login, .loginForm {
+.username, .password {
     display: flex;
     flex-direction: column;
 }
 
-.loginTitle {
-    color: #9342d8;
-}
-
-.email, .password {
-    display: flex;
-    flex-direction: column;
+.usernameInput, .passwordInput {
+    background-color: #3a3a3a;
+    border: 1px solid #9342d8;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .submitButton {
-    background-color: #888888;
+    background-color: #9342d8;
     border: none;
-    color: white;
 }
 
 .submitButton:hover {
-    background-color: #9342d8;
-    color: #242424;
+    background-color: #535bf2;
     transition: background-color 0.5s;
 }
