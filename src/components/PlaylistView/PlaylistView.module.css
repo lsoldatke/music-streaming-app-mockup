@@ -1,7 +1,7 @@
 .playlistView {
     border: 2px solid #9342d8;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 10px 8% 10px;
     text-align: left;
 }
 
