@@ -13,9 +13,11 @@ function Browser({playlists}) {
         <BiLibrary className={styles.libraryIcon}/>
         <h2 className={styles.title}>Library</h2>
         <div className={styles.tools}>
-          <button className={styles.addButton}>
-            <IoMdAdd className={styles.addIcon}/>
-          </button>
+          <Link to="/playlists/add">
+            <button className={styles.addButton}>
+              <IoMdAdd className={styles.addIcon}/>
+            </button>
+          </Link>
         </div>
       </div>
       <div>

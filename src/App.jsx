@@ -6,9 +6,10 @@ import Login from "./components/Login/Login.jsx";
 import PlaylistView from "./components/PlaylistView/PlaylistView.jsx";
 import playlistsData from "./data/playlists.json";
 import songsData from "./data/songs.json";
+import AddPlaylist from "./components/AddPlaylist/AddPlaylist.jsx";
 
 function App() {
-  const [playlists] = useState(playlistsData);
+  const [playlists, setPlaylists] = useState(playlistsData);
   const [songs] = useState(songsData);
   const [currentlyPlayingTrackIndex, setCurrentlyPlayingTrackIndex] =
     useState(0);
@@ -42,6 +43,10 @@ function App() {
 
   function logIn(formData) {
     setUserData(formData);
+  }
+
+  function addPlaylist(playlist) {
+    setPlaylists([...playlists, playlist]);
   }
 
   function PlaylistViewRouteWrapper({playlists, songs}) {
@@ -82,6 +87,10 @@ function App() {
           element={<PlaylistViewRouteWrapper playlists={playlists} songs={songs}/>}
         />
         <Route path="/login" element={<Login onLogin={logIn}/>}/>
+        <Route
+          path="/playlists/add"
+          element={<AddPlaylist onAddPlaylist={addPlaylist}/>}
+        />
       </Routes>
     </BrowserRouter>
   );
